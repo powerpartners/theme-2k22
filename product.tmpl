@@ -36,7 +36,13 @@
       </li>
     </ul>
 
-    <h1><TMPL_VAR NAME='trademark'> <TMPL_VAR NAME='model'></h1>
+    <div itemscope itemtype="http://schema.org/Product">
+    <h1 itemprop="name"><TMPL_VAR NAME='trademark'> <TMPL_VAR NAME='model'></h1>
+
+    <meta itemprop="brand" content="<TMPL_VAR NAME='trademark'>">
+    <meta itemprop="sku" content="<TMPL_VAR NAME='code'>">
+    <meta itemprop="mpn" content="<TMPL_VAR NAME='article'>">
+    <TMPL_IF NAME="barcode"><meta itemprop="gtin13" content="<TMPL_VAR NAME='barcode'>"></TMPL_IF>
 
     <div class="product">
       <div class="gallery">
@@ -59,17 +65,17 @@
       </div>
       <div class="photo" id="slider">
         <ul style="padding: 0;">
-          <li style=""><img src="products/img/<TMPL_VAR NAME='image_big'>" data-fancybox="gallery"></li>
-          <TMPL_IF NAME="image_big_2"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_2'>" data-fancybox="gallery"></li></TMPL_IF>
-          <TMPL_IF NAME="image_big_3"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_3'>" data-fancybox="gallery"></li></TMPL_IF>
-          <TMPL_IF NAME="image_big_4"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_4'>" data-fancybox="gallery"></li></TMPL_IF>
-          <TMPL_IF NAME="image_big_5"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_5'>" data-fancybox="gallery"></li></TMPL_IF>
+          <li style=""><img src="products/img/<TMPL_VAR NAME='image_big'>" data-fancybox="gallery" itemprop="image"></li>
+          <TMPL_IF NAME="image_big_2"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_2'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
+          <TMPL_IF NAME="image_big_3"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_3'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
+          <TMPL_IF NAME="image_big_4"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_4'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
+          <TMPL_IF NAME="image_big_5"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_5'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
           <!-- <TMPL_IF NAME="image_big_6"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_6'>"></li></TMPL_IF> -->
         </il>
       </div>
       <div class="controls">
         <div class="brief_desc">
-          <TMPL_VAR NAME="description">.<br>
+          <span itemprop="description"><TMPL_VAR NAME="description"></span>.<br>
           <a href="#pages" id="detailed-descr" class="dotted">Подробнее...</a>
         </div>
         <div class="brief_sheet">
@@ -81,8 +87,12 @@
           </ul>
         </div>
         <div class="price-and-buy">
-          <div class="price">
+          <div class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             <TMPL_VAR NAME="fprice">&nbsp;&#8381;
+            <meta itemprop="price" content="<TMPL_VAR NAME='price'>" />
+            <meta itemprop="priceCurrency" content="RUB" />
+            <meta itemprop="itemCondition" content="http://schema.org/NewCondition" />
+            <link itemprop="availability" href="http://schema.org/<TMPL_IF NAME='available'>InStock<TMPL_ELSE>OutOfStock</TMPL_IF>" />
           </div>
           <div class="buy">
             <a href="/buy.php?product=<TMPL_VAR NAME="code">" class="btn yellow">Купить</a>
@@ -152,6 +162,7 @@
         </div>
       </div>
 
+    </div>
     </div>
   </div>
 
