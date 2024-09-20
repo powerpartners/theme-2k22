@@ -3,11 +3,17 @@
   data-name="<TMPL_VAR NAME='trademark' escape='html'> <TMPL_VAR NAME='model' escape='html'>"
   data-brand="<TMPL_VAR NAME='trademark' escape='html'>"
   data-category="<TMPL_VAR NAME='category' escape='html'>"
-  data-price="<TMPL_IF NAME='price'><TMPL_VAR NAME='price'><TMPL_ELSE>0</TMPL_IF>">
+  data-price="<TMPL_IF NAME='price'><TMPL_VAR NAME='price'><TMPL_ELSE>0</TMPL_IF>"
+  itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
   <div class="img">
-    <img src="products/img/<TMPL_VAR NAME='image_big'>" alt="<TMPL_VAR NAME="trademark"> <TMPL_VAR NAME='model'>" title="<TMPL_VAR NAME="trademark"> <TMPL_VAR NAME='model'>"/>
+    <img src="products/img/<TMPL_VAR NAME='image_big'>" alt="<TMPL_VAR NAME="trademark"> <TMPL_VAR NAME='model'>" title="<TMPL_VAR NAME="trademark"> <TMPL_VAR NAME='model'>" itemprop="image" />
   </div>
   <div class="price"><TMPL_VAR NAME="fprice">&nbsp;&#8381;</div>
   <div class="category"><TMPL_VAR NAME="category"></div>
-  <div class="model"><TMPL_VAR NAME="trademark"> <TMPL_VAR NAME='model'></div>
+  <div class="model" itemprop="name"><TMPL_VAR NAME="trademark"> <TMPL_VAR NAME='model'></div>
+  <meta itemprop="description" content="<TMPL_VAR NAME='description' escape='dq'>" />
+  <meta itemprop="price" content="<TMPL_VAR NAME='price'>" />
+  <meta itemprop="priceCurrency" content="RUB" />
+  <link itemprop="url" href="/product.php?product=<TMPL_VAR NAME='code'>" />
+  <link itemprop="availability" href="http://schema.org/<TMPL_IF NAME='available'>InStock<TMPL_ELSE>OutOfStock</TMPL_IF>" />
 </a>

@@ -2,16 +2,21 @@
 <html lang="ru-RU">
 <head>
   <title><TMPL_VAR NAME='title'></title>
-  <meta name="description" content="<TMPL_VAR NAME="description">" />
-  <meta name="keywords" content="<TMPL_VAR NAME="keywords">" />
+  <meta name="description" content="<TMPL_VAR NAME='description' escape='dq'>" />
+  <meta name="keywords" content="<TMPL_VAR NAME='keywords' escape='dq'>" />
   <TMPL_INCLUDE FILE="_meta.tmpl">
 </head>
 <body>
   <TMPL_INCLUDE FILE="_header.tmpl">
 
-  <div class="container">
+  <div class="container" itemscope itemtype="https://schema.org/OfferCatalog">
 
-    <h1><TMPL_VAR NAME='caption'></h1>
+    <h1 itemprop="name"><TMPL_VAR NAME='caption'></h1>
+
+    <TMPL_VAR NAME="text">
+    <meta itemprop="description" content="<TMPL_VAR NAME='description' escape='dq'>">
+    <link itemprop="image" href="<TMPL_VAR NAME='image'>">
+
     <div class="items-list">
       <TMPL_IF NAME='products'>
         <TMPL_LOOP NAME='products'>
@@ -23,10 +28,5 @@
   </div>
 
   <TMPL_INCLUDE FILE="_footer.tmpl">
-
-  <script type="text/javascript">
-    ecommerce_impressions();
-  </script>
-
 </body>
 </html>
