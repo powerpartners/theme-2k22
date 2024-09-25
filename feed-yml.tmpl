@@ -22,7 +22,7 @@
   <offers>
 <TMPL_IF NAME="goods">
 <TMPL_LOOP NAME="goods">
-    <offer id="<TMPL_VAR NAME="id">" type="vendor.model" available="<TMPL_IF NAME="available">true<TMPL_ELSE>false</TMPL_IF>" <TMPL_IF NAME="bid">bid="<TMPL_VAR NAME='bid'>"</TMPL_IF>>
+    <offer id="<TMPL_VAR NAME="code">" type="vendor.model" available="<TMPL_IF NAME="available">true<TMPL_ELSE>false</TMPL_IF>" <TMPL_IF NAME="bid">bid="<TMPL_VAR NAME='bid'>"</TMPL_IF>>
       <url><TMPL_VAR NAME="BASE_URL">product.php?product=<TMPL_VAR NAME='code'></url>
       <price><TMPL_VAR NAME="price"></price>
       <currencyId>RUB</currencyId>
@@ -49,14 +49,35 @@
 <TMPL_IF NAME='barcode'>
       <barcode><TMPL_VAR NAME='barcode'></barcode>
 </TMPL_IF>
-      <sales_notes><TMPL_IF NAME="sales_notes"><TMPL_VAR NAME='sales_notes'></TMPL_IF></sales_notes>
+<TMPL_IF NAME='collections'>
+  <TMPL_LOOP NAME="collections">
+    <collectionId><TMPL_VAR NAME='collectionId'></collectionId>
+  </TMPL_LOOP>
+</TMPL_IF>
+    <sales_notes><TMPL_IF NAME="sales_notes"><TMPL_VAR NAME='sales_notes'></TMPL_IF></sales_notes>
     </offer>
 </TMPL_LOOP>
 </TMPL_IF>
   </offers>
 
-  <promos>
-  </promos>
+<TMPL_UNLESS NAME="collections_disabled">
+<TMPL_IF NAME='collections'>
+  <collections>
+    <TMPL_LOOP NAME="collections">
+      <collection id="<TMPL_VAR NAME='id' ESCAPE='dq'>">
+        <url><TMPL_VAR NAME="BASE_URL"><TMPL_IF NAME='url'><TMPL_VAR NAME='url'><TMPL_ELSE>cat.php?cat=<TMPL_VAR NAME='id' ESCAPE='dq'></TMPL_IF></url>
+        <name><TMPL_VAR NAME='name' ESCAPE='html'></name>
+        <description><TMPL_VAR NAME='description' ESCAPE='html'></description>
+        <TMPL_IF NAME='images'>
+          <TMPL_LOOP NAME="images">
+            <picture><TMPL_VAR NAME='image' ESCAPE='html'></picture>
+          </TMPL_LOOP>
+        </TMPL_IF>
+      </collection>
+    </TMPL_LOOP>
+  </collections>
+</TMPL_IF>
+</TMPL_UNLESS>
 
 </shop>
 </yml_catalog>
