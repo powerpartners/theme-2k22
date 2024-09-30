@@ -70,7 +70,7 @@
         <description><TMPL_VAR NAME='description' ESCAPE='html'></description>
         <TMPL_IF NAME='images'>
           <TMPL_LOOP NAME="images">
-            <picture><TMPL_VAR NAME='image' ESCAPE='html'></picture>
+            <picture><TMPL_VAR NAME="BASE_URL"><TMPL_VAR NAME='image' ESCAPE='html'></picture>
           </TMPL_LOOP>
         </TMPL_IF>
       </collection>
