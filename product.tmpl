@@ -46,31 +46,31 @@
 
     <div class="product">
       <div class="gallery">
-        <a href="products/img/<TMPL_VAR NAME='image_big'>" class="card active"><img src="products/img/<TMPL_VAR NAME='image_big'>"></a>
+        <a href="/products/img/<TMPL_VAR NAME='image_big'>" class="card active"><img src="/products/img/<TMPL_VAR NAME='image_big'>"></a>
         <TMPL_IF NAME="image_big_2">
-          <a href="products/img/<TMPL_VAR NAME='image_big_2'>" class="card"><img src="products/img/<TMPL_VAR NAME='image_big_2'>"></a>
+          <a href="/products/img/<TMPL_VAR NAME='image_big_2'>" class="card"><img src="/products/img/<TMPL_VAR NAME='image_big_2'>"></a>
         </TMPL_IF>
         <TMPL_IF NAME="image_big_3">
-          <a href="products/img/<TMPL_VAR NAME='image_big_3'>" class="card"><img src="products/img/<TMPL_VAR NAME='image_big_3'>"></a>
+          <a href="/products/img/<TMPL_VAR NAME='image_big_3'>" class="card"><img src="/products/img/<TMPL_VAR NAME='image_big_3'>"></a>
         </TMPL_IF>
         <TMPL_IF NAME="image_big_4">
-          <a href="products/img/<TMPL_VAR NAME='image_big_4'>" class="card"><img src="products/img/<TMPL_VAR NAME='image_big_4'>"></a>
+          <a href="/products/img/<TMPL_VAR NAME='image_big_4'>" class="card"><img src="/products/img/<TMPL_VAR NAME='image_big_4'>"></a>
         </TMPL_IF>
         <TMPL_IF NAME="image_big_5">
-          <a href="products/img/<TMPL_VAR NAME='image_big_5'>" class="card"><img src="products/img/<TMPL_VAR NAME='image_big_5'>"></a>
+          <a href="/products/img/<TMPL_VAR NAME='image_big_5'>" class="card"><img src="/products/img/<TMPL_VAR NAME='image_big_5'>"></a>
         </TMPL_IF>
         <!-- <TMPL_IF NAME="image_big_6">
-          <a href="products/img/<TMPL_VAR NAME='image_big_6'>" class="card"><img src="products/img/<TMPL_VAR NAME='image_big_6'>"></a>
+          <a href="/products/img/<TMPL_VAR NAME='image_big_6'>" class="card"><img src="/products/img/<TMPL_VAR NAME='image_big_6'>"></a>
         </TMPL_IF> -->
       </div>
       <div class="photo" id="slider">
         <ul style="padding: 0;">
-          <li style=""><img src="products/img/<TMPL_VAR NAME='image_big'>" data-fancybox="gallery" itemprop="image"></li>
-          <TMPL_IF NAME="image_big_2"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_2'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
-          <TMPL_IF NAME="image_big_3"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_3'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
-          <TMPL_IF NAME="image_big_4"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_4'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
-          <TMPL_IF NAME="image_big_5"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_5'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
-          <!-- <TMPL_IF NAME="image_big_6"><li style="display: none;"><img src="products/img/<TMPL_VAR NAME='image_big_6'>"></li></TMPL_IF> -->
+          <li style=""><img src="/products/img/<TMPL_VAR NAME='image_big'>" data-fancybox="gallery" itemprop="image"></li>
+          <TMPL_IF NAME="image_big_2"><li style="display: none;"><img src="/products/img/<TMPL_VAR NAME='image_big_2'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
+          <TMPL_IF NAME="image_big_3"><li style="display: none;"><img src="/products/img/<TMPL_VAR NAME='image_big_3'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
+          <TMPL_IF NAME="image_big_4"><li style="display: none;"><img src="/products/img/<TMPL_VAR NAME='image_big_4'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
+          <TMPL_IF NAME="image_big_5"><li style="display: none;"><img src="/products/img/<TMPL_VAR NAME='image_big_5'>" data-fancybox="gallery" itemprop="image"></li></TMPL_IF>
+          <!-- <TMPL_IF NAME="image_big_6"><li style="display: none;"><img src="/products/img/<TMPL_VAR NAME='image_big_6'>"></li></TMPL_IF> -->
         </il>
       </div>
       <div class="controls">
@@ -140,7 +140,7 @@
         </div>
         <div id="page_doc">
           <TMPL_IF NAME="certificate">
-          <a href="<TMPL_VAR NAME='certificate'>">
+          <a href="/<TMPL_VAR NAME='certificate'>">
             <i class="powericon-certificate"></i>
             <div>
               Сертификат соответствия
@@ -149,7 +149,7 @@
           </a>
           </TMPL_IF>
           <TMPL_IF NAME="manual">
-          <a href="<TMPL_VAR NAME='manual'>">
+          <a href="/<TMPL_VAR NAME='manual'>">
             <i class="powericon-pdf"></i>
             <div>
               Инструкция по эксплуатации
