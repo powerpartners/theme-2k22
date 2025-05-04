@@ -11,11 +11,12 @@
 
   <div class="container" itemscope itemtype="https://schema.org/OfferCatalog">
 
+
     <h1 itemprop="name"><TMPL_VAR NAME='caption'></h1>
 
-    <TMPL_VAR NAME="text">
-    <meta itemprop="description" content="<TMPL_VAR NAME='description' escape='dq'>">
-    <link itemprop="image" href="<TMPL_VAR NAME='image'>">
+    <TMPL_IF NAME="text"><TMPL_VAR NAME="text"></TMPL_IF>
+    <TMPL_IF NAME="description"><meta itemprop="description" content="<TMPL_VAR NAME='description' escape='dq'>"></TMPL_IF>
+    <TMPL_IF NAME="img"><link itemprop="image" href="<TMPL_VAR NAME='img'>"></TMPL_IF>
 
     <div class="items-list">
       <TMPL_IF NAME='products'>
